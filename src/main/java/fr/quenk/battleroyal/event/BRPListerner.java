@@ -56,6 +56,7 @@ public class BRPListerner implements Listener {
             p.setAllowFlight(true);
             p.setLevel(0);
             p.setExp(0);
+            p.setStatistic(Statistic.PLAYER_KILLS,0);
 
         }
         if(main.isState(BRState.WAITING)&& main.getBrplayer().size() == 2){
@@ -82,12 +83,6 @@ public class BRPListerner implements Listener {
         }
 
     }
-
-    @EventHandler
-    public void onCreatureSpawn(CreatureSpawnEvent event) {
-        if (event.getSpawnReason().equals(CreatureSpawnEvent.SpawnReason.NATURAL)) event.setCancelled(true);
-    }
-
  /*   public boolean day() {
         Server server = getServer();
         long time = server.getWorld("world").getTime();

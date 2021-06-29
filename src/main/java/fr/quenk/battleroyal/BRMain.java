@@ -58,6 +58,8 @@ public final class BRMain extends JavaPlugin {
                 "Players: " + getServer().getOnlinePlayers().size(),
                 "",
                 "Kills: " + board.getPlayer().getStatistic(Statistic.PLAYER_KILLS),
+                "",
+                "Game state " + state.name(),
                 ""
         );
     }
