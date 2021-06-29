@@ -1,5 +1,6 @@
 package fr.quenk.battleroyal.event;
 
+import fr.mrmicky.fastboard.FastBoard;
 import fr.quenk.battleroyal.BRMain;
 import fr.quenk.battleroyal.tasks.BRAutoStart;
 import fr.quenk.battleroyal.utils.BRState;
@@ -32,10 +33,9 @@ public class BRPListerner implements Listener {
 
         event.setJoinMessage(ChatUtils.PREFIX.getMessage()+" "+ChatColor.GRAY+p.getName()+" "+ChatUtils.PLUS.getMessage());
 
-      /*  if(main.isState(BRState.STARTING) || main.isState(BRState.GAME) && main.getBrplayer().contains(p)){
-            event.setJoinMessage(ChatUtils.PREFIX.getMessage()+" "+ChatColor.GRAY+p.getName()+" "+ChatUtils.RECONNECTED.getMessage());
-        }*/
-
+        FastBoard board = new FastBoard(p);
+        board.updateTitle(ChatColor.RED + ChatUtils.PREFIX.getMessage());
+        main.boards.put(p.getUniqueId(), board);
 
         if(!main.isState(BRState.WAITING) && !main.getBrplayer().contains(p)){
 
@@ -73,6 +73,12 @@ public class BRPListerner implements Listener {
 
         if(!main.isState(BRState.WAITING) && !main.getBrplayer().contains(p)){
             event.setQuitMessage(null);
+        }
+
+        FastBoard board = main.boards.remove(p.getUniqueId());
+
+        if (board != null) {
+            board.delete();
         }
 
     }

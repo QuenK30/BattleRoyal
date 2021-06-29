@@ -3,3 +3,4 @@ version: ${project.version}
 main: fr.quenk.battleroyal.BRMain
 api-version: 1.17
 description: BattleRoyal spigot plugin by QuentinMn
+website: https://discord.com/invite/pSrvrU8pcN
