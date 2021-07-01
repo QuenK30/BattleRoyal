@@ -59,7 +59,7 @@ public final class BRMain extends JavaPlugin {
                 "",
                 "Kills: " + board.getPlayer().getStatistic(Statistic.PLAYER_KILLS),
                 "",
-                "Game state " + state.name(),
+                "State: " + state.name(),
                 ""
         );
     }

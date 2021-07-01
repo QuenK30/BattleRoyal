@@ -83,10 +83,4 @@ public class BRPListerner implements Listener {
         }
 
     }
- /*   public boolean day() {
-        Server server = getServer();
-        long time = server.getWorld("world").getTime();
-
-        return time < 12300 || time > 23850;
-    }*/
 }
