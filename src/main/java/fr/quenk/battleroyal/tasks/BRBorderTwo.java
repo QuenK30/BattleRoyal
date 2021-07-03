@@ -26,16 +26,16 @@ public class BRBorderTwo extends BukkitRunnable {
         worldBorder.setCenter(0,0);
         if(timer == 1800){
             worldBorder.setDamageAmount(2);
-            worldBorder.setSize(1000);
+            worldBorder.setSize(2000);
             Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+" the border is 1000 x 1000");
         }
         if(timer == 900){
-            worldBorder.setSize(500);
+            worldBorder.setSize(1000);
             worldBorder.setDamageAmount(4);
             Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+" the border is 500 x 500");
         }
         if(timer == 300){
-            worldBorder.setSize(100);
+            worldBorder.setSize(200);
             worldBorder.setDamageAmount(6);
             Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ ChatColor.GRAY+" the border is 100 x 100");
         }

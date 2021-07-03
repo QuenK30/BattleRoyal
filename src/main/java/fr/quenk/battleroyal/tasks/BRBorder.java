@@ -39,7 +39,7 @@ public class BRBorder extends BukkitRunnable {
             World world = Bukkit.getWorld("world");
             WorldBorder worldBorder = world.getWorldBorder();
             worldBorder.setCenter(0,0);
-            worldBorder.setSize(2000);
+            worldBorder.setSize(4000);
 
             Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+" the border is 2000 x 2000");
 
