@@ -68,7 +68,8 @@ public class BRAutoStart extends BukkitRunnable {
             BRGameCycle gameCycle = new BRGameCycle(main);
             gameCycle.runTaskTimer(main,0,20);
 
-            
+            BRBorder border = new BRBorder(main);
+            border.runTaskTimer(main,0,20);
 
             cancel();
         }

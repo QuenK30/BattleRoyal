@@ -6,6 +6,7 @@ import fr.quenk.battleroyal.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
+import org.bukkit.Statistic;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -92,7 +93,7 @@ public class BRPDamage implements Listener {
             event.setDeathMessage(ChatUtils.PREFIX.getMessage() + ChatColor.RED + player.getName() + ChatColor.GRAY + " was eliminated by " + ChatColor.RED + killer.getName());
             main.getBrplayer().remove(player);
             player.kickPlayer("You are dead");
-            killer.kickPlayer("CONGRATULATIONS YOU WIN!");
+            killer.kickPlayer("CONGRATULATIONS YOU WIN! (with "+player.getStatistic(Statistic.PLAYER_KILLS)+" kills)");
             return;
         }
         event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+player.getName()+" died miserably !");
