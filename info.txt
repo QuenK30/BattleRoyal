@@ -7,6 +7,7 @@ Règles:
  - Vous devez être le dernier survivant.
  - Vous pouvez vous battre uniquement que de nuit
  - pas de fight première nuit
+ - bordure 60mn : 2000x2000 30mn: 1000x1000 15mn: 500x500
 
 
  TODO-LIST:

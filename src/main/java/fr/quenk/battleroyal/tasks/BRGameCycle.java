@@ -31,7 +31,7 @@ public class BRGameCycle extends BukkitRunnable {
             Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+" 5 minutes until PVP.");
         }
         if(timer == 4||timer == 3|| timer == 2 || timer ==1 || timer == 5 || timer == 15 || timer == 10 || timer == 30 || timer == 60){
-            Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+timer+" seconds until pvp.");
+            Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+" "+ ChatColor.GRAY+timer+" seconds until pvp.");
         }
         if(timer == 0){
 

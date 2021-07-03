@@ -7,7 +7,5 @@ public enum BRState {
     WAITING,
     STARTING,
     GAME,
-    PVP,
-    DEATHMATCH,
-    FINISH
+    PVP
 }

@@ -75,6 +75,9 @@ public class BRPListerner implements Listener {
         if(!main.isState(BRState.WAITING) && !main.getBrplayer().contains(p)){
             event.setQuitMessage(null);
         }
+        if(Bukkit.getOnlinePlayers().size() == 1 || Bukkit.getOnlinePlayers().size() == 0){
+            Bukkit.shutdown();
+        }
 
         FastBoard board = main.boards.remove(p.getUniqueId());
 

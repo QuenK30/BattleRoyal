@@ -47,7 +47,7 @@ public class BRAutoStart extends BukkitRunnable {
             }
             Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ ChatColor.GRAY+" Let the battle rage!");
             world.setTime(12300);
-            Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+" DeathMatch in"+ChatColor.RED+" 60 "+ChatColor.GRAY+"minutes !");
+            Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+" Border in"+ChatColor.RED+" 60 "+ChatColor.GRAY+"minutes !");
             main.setState(BRState.GAME);
 
             for(Player pls : Bukkit.getOnlinePlayers()){
@@ -67,6 +67,8 @@ public class BRAutoStart extends BukkitRunnable {
 
             BRGameCycle gameCycle = new BRGameCycle(main);
             gameCycle.runTaskTimer(main,0,20);
+
+            
 
             cancel();
         }
