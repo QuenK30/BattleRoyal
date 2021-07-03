@@ -18,8 +18,6 @@ Règles:
     - Nom des joueurs (OPTIONNEL: position avec la fléche)
     - petite pub tu coco
  - mettre en invisible les pseudos
- - death match au bout de 1h
- - désactiver le spawn des mobs
 
  **BETA:**
  - State game

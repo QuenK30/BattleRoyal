@@ -8,6 +8,7 @@ import org.bukkit.ChatColor;
 public enum ChatUtils {
 
     PREFIX(ChatColor.WHITE+"﴾"+ ChatColor.GRAY+" Battle"+ChatColor.RED+"Royal "+ChatColor.WHITE+"﴿ " ),
+    PUB(ChatColor.WHITE+"﴾"+ ChatColor.GRAY+" By"+ChatColor.RED+" QuenK "+ChatColor.WHITE+"﴿ " ),
     PLUS(ChatColor.GRAY+"["+ChatColor.GREEN+"+"+ChatColor.GRAY+"]"),
     MOIN(ChatColor.GRAY+"["+ChatColor.GREEN+"-"+ChatColor.GRAY+"]"),
     RECONNECTED(ChatColor.GRAY+"["+ChatColor.GREEN+"RECONNECTED"+ChatColor.GRAY+"]");

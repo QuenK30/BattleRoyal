@@ -3,6 +3,8 @@ package fr.quenk.battleroyal;
 import fr.mrmicky.fastboard.FastBoard;
 import fr.quenk.battleroyal.event.EventManager;
 import fr.quenk.battleroyal.utils.BRState;
+import fr.quenk.battleroyal.utils.ChatUtils;
+import org.bukkit.ChatColor;
 import org.bukkit.Statistic;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -55,12 +57,13 @@ public final class BRMain extends JavaPlugin {
     private void updateBoard(FastBoard board) {
         board.updateLines(
                 "",
-                "Players: " + getServer().getOnlinePlayers().size(),
+                ChatColor.GRAY+"Players: " + getServer().getOnlinePlayers().size(),
                 "",
-                "Kills: " + board.getPlayer().getStatistic(Statistic.PLAYER_KILLS),
+                ChatColor.GRAY+"Kills: " + board.getPlayer().getStatistic(Statistic.PLAYER_KILLS),
                 "",
-                "State: " + state.name(),
-                ""
+                ChatColor.GRAY+"State: " + state.name(),
+                "",
+                ChatUtils.PUB.getMessage()
         );
     }
 }
