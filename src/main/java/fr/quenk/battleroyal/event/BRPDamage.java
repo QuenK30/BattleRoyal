@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 
 import static org.bukkit.Bukkit.getServer;
 
@@ -49,6 +50,37 @@ public class BRPDamage implements Listener {
         }else{
             System.out.println("mob");
         }
+    }
+
+    @EventHandler
+    public void onDeath(PlayerDeathEvent event){
+
+        Player player = event.getEntity().getPlayer();
+        Player killer = event.getEntity().getKiller();
+
+        if(event.getDeathMessage().contains("hit the ground to hard")){
+            event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.RED+player+ChatColor.GRAY+" didn't see where he was going and fell off a cliff !");
+        }
+        if(event.getDeathMessage().contains("was shot by Skeleton")){
+            event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.RED+player+ChatColor.GRAY+" looks like a Hedgehog !");
+        }
+        if(event.getDeathMessage().contains("was slain by Spider")){
+            event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.RED+player+ChatColor.GRAY+" wanted to become a Spider-Man ! (It didn't work well)");
+        }
+        if(event.getDeathMessage().contains("was blown up by Creeper")){
+            event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.RED+player+ChatColor.GRAY+" made friends with a Creeper !");
+        }
+        if(event.getDeathMessage().contains("was slain by Husk")){
+            event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.RED+player+ChatColor.GRAY+" it's chained by a Husk !");
+        }
+        if(event.getDeathMessage().contains("was slain by Zombie")){
+            event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.RED+player+ChatColor.GRAY+" wanted to hug a Zombie !");
+        }
+        if(event.getDeathMessage().contains("was slain by Slime")){
+            event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.RED+player+ChatColor.GRAY+" is now slimy !");
+        }
+        if(event.getDeathMessage().contains("was slain by"))
+        event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.RED+player+ChatColor.GRAY+" was eliminated by "+ChatColor.RED+killer);
     }
 
    public boolean day() {
