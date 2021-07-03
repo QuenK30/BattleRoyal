@@ -25,6 +25,16 @@ public class BRAutoStart extends BukkitRunnable {
         for(Player pls : Bukkit.getOnlinePlayers()){
             pls.setLevel(timer);
         }
+
+
+        //0 0
+        World world = Bukkit.getWorld("world");
+        Location location = new Location(world, 0, 0, 0);
+        location.setX( location.getX() + Math.random() * 10 * 2 - 10);
+        location.setZ( location.getZ() + Math.random() * 10 * 2 - 10);
+
+        location.setY( world.getHighestBlockAt(location.getBlockX(), location.getBlockZ() ).getY()+1);
+
         if(timer == 10 || timer == 20 || timer == 5 ||timer == 4||timer == 3||timer == 2 || timer == 1){
             for(Player pls : main.getBrplayer()){
                 pls.playSound(pls.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP,20,20);
@@ -36,16 +46,9 @@ public class BRAutoStart extends BukkitRunnable {
                 pls.playSound(pls.getLocation(), Sound.ENTITY_ENDER_DRAGON_AMBIENT,20,20);
             }
             Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ ChatColor.GRAY+" Let the battle rage!");
+            world.setTime(12300);
             Bukkit.broadcastMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+" DeathMatch in"+ChatColor.RED+" 60 "+ChatColor.GRAY+"minutes !");
             main.setState(BRState.GAME);
-
-            //0 0
-            World world = Bukkit.getWorld("world");
-            Location location = new Location(world, 0, 0, 0);
-            location.setX( location.getX() + Math.random() * 10 * 2 - 10);
-            location.setZ( location.getZ() + Math.random() * 10 * 2 - 10);
-
-            location.setY( world.getHighestBlockAt(location.getBlockX(), location.getBlockZ() ).getY()+1);
 
             for(Player pls : Bukkit.getOnlinePlayers()){
                 pls.teleport(location);
