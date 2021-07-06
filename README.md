@@ -1,4 +1,4 @@
-# BattleRoyal (Spigot plugins: ??)
+# BattleRoyal (Spigot plugins: https://www.spigotmc.org/resources/battle-royal-let-the-battle-rage.93856/)
 
 # 🇫🇷
   Ceci est un plugin de Bataille royal inspiré de la vidéo de Armanthio d'il y a LONGTEMPS (https://www.youtube.com/watch?v=xWrLR0zIk0A)
