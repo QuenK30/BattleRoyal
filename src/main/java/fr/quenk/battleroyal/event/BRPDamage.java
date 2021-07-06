@@ -93,7 +93,9 @@ public class BRPDamage implements Listener {
             event.setDeathMessage(ChatUtils.PREFIX.getMessage() + ChatColor.RED + player.getName() + ChatColor.GRAY + " was eliminated by " + ChatColor.RED + killer.getName());
             main.getBrplayer().remove(player);
             player.kickPlayer("You are dead");
-            killer.kickPlayer("CONGRATULATIONS YOU WIN! (with "+player.getStatistic(Statistic.PLAYER_KILLS)+" kills)");
+            if(Bukkit.getOnlinePlayers().size() == 1){
+                killer.kickPlayer("CONGRATULATIONS YOU WIN! (with "+player.getStatistic(Statistic.PLAYER_KILLS)+" kills)");
+            }
             return;
         }
         event.setDeathMessage(ChatUtils.PREFIX.getMessage()+ChatColor.GRAY+player.getName()+" died miserably !");
