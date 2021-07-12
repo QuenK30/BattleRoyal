@@ -1,11 +1,13 @@
 package fr.quenk.battleroyal;
 
 import fr.mrmicky.fastboard.FastBoard;
+import fr.quenk.battleroyal.cmd.BRCmd;
 import fr.quenk.battleroyal.event.EventManager;
 import fr.quenk.battleroyal.utils.BRState;
 import fr.quenk.battleroyal.utils.ChatUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Statistic;
+import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,13 +28,17 @@ public final class BRMain extends JavaPlugin {
         System.out.println("Enable");
         new EventManager(this).registerEvents();
         setState(BRState.WAITING);
-
+        getCommand("br").setExecutor(new BRCmd());
+        saveDefaultConfig();
         getServer().getScheduler().runTaskTimer(this, () -> {
             for (FastBoard board : this.boards.values()) {
                 updateBoard(board);
             }
         }, 0, 20);
 
+        if(getConfig().getBoolean("life.active")){
+            
+        }
         super.onEnable();
     }
 
@@ -62,7 +68,6 @@ public final class BRMain extends JavaPlugin {
                 ChatColor.GRAY+"Kills: " + board.getPlayer().getStatistic(Statistic.PLAYER_KILLS),
                 "",
                 ChatColor.GRAY+"State: " + state.name(),
-                "",
                 ChatUtils.PUB.getMessage()
         );
     }

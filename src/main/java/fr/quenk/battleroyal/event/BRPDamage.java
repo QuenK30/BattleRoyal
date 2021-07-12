@@ -32,20 +32,20 @@ public class BRPDamage implements Listener {
             if (main.isState(BRState.WAITING)|| main.isState(BRState.STARTING)) {
                 System.out.println("waiting");
                 event.setCancelled(true);
-                player.sendMessage(ChatUtils.PREFIX.getMessage() + ChatColor.GRAY + " The game has not started!");
+                player.sendMessage(ChatUtils.PREFIX.getMessage() + ChatColor.GRAY + "The game has not started!");
 
             }
             if(main.isState(BRState.GAME)){
                 System.out.println("NO PVP");
                 event.setCancelled(true);
-                player.sendMessage(ChatUtils.PREFIX.getMessage() + ChatColor.GRAY + " The PvP has not started!");
+                player.sendMessage(ChatUtils.PREFIX.getMessage() + ChatColor.GRAY + "The PvP has not started!");
             }
             if (main.isState(BRState.PVP) ) {
                 if (!day()){
                     event.setCancelled(false);
                     return;
                 }else{
-                    player.sendMessage(ChatUtils.PREFIX.getMessage() + ChatColor.GRAY + " You can PvP only at night");
+                    player.sendMessage(ChatUtils.PREFIX.getMessage() + ChatColor.GRAY + "You can PvP only at night");
                     event.setCancelled(true);
                 }
                 System.out.println("game or deathmatch");

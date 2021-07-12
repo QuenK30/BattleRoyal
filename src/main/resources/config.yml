@@ -1,0 +1,8 @@
+  #============================================================
+  #|                   BattleRoyal                            |
+  #|                   By QuenK / QuentinMN (QuenK#2170)      |
+  #============================================================
+#If you want a life on your game
+life:
+  active: false
+  number: 0
